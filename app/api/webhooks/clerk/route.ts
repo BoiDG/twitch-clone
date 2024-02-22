@@ -44,6 +44,9 @@ export async function POST(req: Request) {
     }
 
     const eventType = evt.type;
+    // console.log(eventType)
+
+    // const { id } = evt.data
 
     // console.log(`Webhook with and ID of ${id} and type of ${eventType}`)
     // console.log('Webhook body:', body)
@@ -77,7 +80,7 @@ export async function POST(req: Request) {
 
     if (eventType === "user.deleted") {
         await resetIngresses(payload.data.id);
-        
+
         await db.user.delete({
             where: {
                 externalUserId: payload.data.id,

@@ -8,6 +8,8 @@ import { Following, FollowingSkeleton } from "./following";
 
 export const Sidebar = async () => {
     const recommended = await getRecommended();
+
+    // console.log("this",recommended)
     const following = await getFollewedUsers();
 
     return (

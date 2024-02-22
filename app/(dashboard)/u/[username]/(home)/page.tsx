@@ -13,6 +13,7 @@ const CreatorPage = async ({
 }: CreatorPageProps) => {
     const externalUser = await currentUser();
     const user = await getUserByUsername(params.username);
+    // console.log("yg ini", user);
 
     if (!user || user.externalUserId !== externalUser?.id || !user.stream) {
         throw new Error("Unauthorized");

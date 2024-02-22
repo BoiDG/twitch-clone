@@ -34,6 +34,8 @@ export const getSelfByUsername = async (username: string) => {
         }
     });
 
+    // console.log("userrr:", user);
+
     if (!user) {
         throw new Error("User not found");
     }
